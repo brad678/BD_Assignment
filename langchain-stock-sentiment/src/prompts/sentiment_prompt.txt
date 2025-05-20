@@ -1,0 +1,39 @@
+Given the following financial news summary, perform the following tasks:
+        
+1. **Classify sentiment** as 'Positive', 'Negative', or 'Neutral'.
+2. **Extract named entities**, including:
+    - **People** (individuals mentioned)
+    - **Places** (locations related to the news)
+    - **Companies** (primary company and other firms referenced)
+3. **Identify related industries** relevant to the news.
+4. **Determine market implications**, such as:
+    - Stock trends (bullish, bearish, volatile)
+    - Economic impacts
+    - Investor sentiment changes
+5. **Assign a confidence score** (range: 0-1) based on certainty in the analysis.
+
+**News Summary**:
+{news_summary}
+
+Provide the output JSON strictly in the following format:
+{{
+    "company_name": "{{news_company_name}}",
+    "stock_code": "{{news_stock_code}}",
+    "newsdesc": "{{news_desc}}",                                  
+    "sentiment": "<Positive/Negative/Neutral>",
+    "named_entities": {{
+        "people": [List of names],
+        "places": [List of locations],
+        "companies": {{
+            "primary_company": "<Main company>",
+            "other_companies": [List of referenced companies]
+        }},
+    }},
+    "related_industries": [List of industries],
+    "market_implications": {{
+        "stock_trend": "<Bullish/Bearish/Volatile>",
+        "economic_impact": "<Brief description>",
+        "investor_sentiment": "<Brief description>"
+    }},
+    "confidence_score": <float between 0 and 1>
+}}

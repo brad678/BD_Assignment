@@ -1,0 +1,11 @@
+langchain
+langchain-core
+langchain-openai
+langchain-community
+langfuse
+fastapi
+python-dotenv
+requests
+pandas
+feedparser
+uvicorn
