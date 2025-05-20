@@ -6,9 +6,9 @@ from langchain_openai import AzureChatOpenAI
 from .tracing import langfuse_handler
 import os
 
-print("Model openai endpoint from ENV:", os.getenv("AZURE_OPENAI_ENDPOINT"))
-print("Model openai key from ENV:", os.getenv("AZURE_OPENAI_API_KEY"))
-print("Model openai deployment from ENV:", os.getenv("AZURE_OPENAI_DEPLOYMENT"))
+# print("Model openai endpoint from ENV:", os.getenv("AZURE_OPENAI_ENDPOINT"))
+# print("Model openai key from ENV:", os.getenv("AZURE_OPENAI_API_KEY"))
+# print("Model openai deployment from ENV:", os.getenv("AZURE_OPENAI_DEPLOYMENT"))
 
 
 class StockNewsLangChain:
