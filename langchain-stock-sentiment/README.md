@@ -1,25 +1,21 @@
 # LangChain Stock Sentiment Analysis Project
 
 ## Overview
-This project leverages LangChain to create a sentiment analysis application that processes company names, retrieves stock codes, fetches related news articles, and analyzes sentiment using Azure OpenAI. The application is designed to provide structured sentiment profiles in JSON format, including sentiment classification and named entity extraction.
+This project leverages LangChain to create a sentiment analysis application that processes company names, retrieves stock codes, fetches related news articles, generates news summary, and analyzes sentiment using Azure OpenAI. The application is designed to provide structured sentiment profiles in JSON format, including sentiment classification and named entity extraction.
 
 ## Project Structure
 ```
 langchain-stock-sentiment
 ├── src
-│   ├── app.py                     # Main entry point of the application
+│   ├── app.py                      # Main entry point of the application
 │   ├── services
-│   │   ├── stock_code_extractor.py # Extracts stock codes from Yahoo Finance
-│   │   ├── news_retriever.py       # Retrieves news articles related to the company
-│   │   ├── sentiment_analyzer.py    # Analyzes sentiment using Azure OpenAI
+│   │   ├── news_retriever.py       # Retrieves stock code, news articles and summary related to the company
+│   │   ├── sentiment_analyzer.py   # Analyzes sentiment using Azure OpenAI and extracts entities
 │   │   └── tracing.py              # Implements tracing with LangFuse
 │   ├── prompts
-│   │   └── sentiment_prompt.txt     # Prompt template for sentiment analysis
+│   │   └── sentiment_prompt.txt    # Prompt template for sentiment analysis
 │   └── utils
 │       └── helpers.py              # Utility functions for common tasks
-├── config
-│   ├── settings.py                 # Configuration settings for the application
-│   └── azure_openai_config.json    # Azure OpenAI service configuration
 ├── requirements.txt                # Python dependencies for the project
 ├── README.md                       # Documentation for the project
 └── .env                            # Environment variables for sensitive information
@@ -49,14 +45,15 @@ langchain-stock-sentiment
 5. **Run the application**:
    ```
    python src/app.py
+   To Test locally using swagger UI: Navigate to src ->> uvicorn app:app --reload --port 8001
    ```
 
 ## Usage
-- Send a request to the application with a company name to retrieve the stock code, fetch news articles, and analyze sentiment.
+- Send a request to the application with a company name to retrieve the stock code, fetch news articles, generate news summary and analyze sentiment.
 - The application will return a structured JSON response containing the sentiment profile and named entities.
 
 ## Features
-- **Stock Code Extraction**: Automatically retrieves or suggests stock codes using Yahoo Finance.
+- **Stock Code Extraction**: Automatically retrieves or suggests stock codes.
 - **News Retrieval**: Gathers the latest news articles related to the specified company.
 - **Sentiment Analysis**: Utilizes Azure OpenAI to analyze sentiment and extract named entities.
 - **Tracing and Monitoring**: Integrates LangFuse for tracing, prompt debugging, and performance monitoring.
