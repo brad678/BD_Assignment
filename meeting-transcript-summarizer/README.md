@@ -1,4 +1,3 @@
-````markdown
 # 📝 Meeting Transcript Summarizer & Action Item Extractor
 
 This project automates the process of summarizing meeting transcripts and extracting actionable items using Azure OpenAI's `gpt-4o-mini` model. It provides a Flask-based web interface and ensures JSON validation using Pydantic.
@@ -111,8 +110,5 @@ Transcripts can be edited or extended via the `transcripts.txt` file.
 
 Built by a Bharadwaj using GPT-4o-mini and Flask. Feel free to fork and extend!
 
-```
-
 ---
-```
 
